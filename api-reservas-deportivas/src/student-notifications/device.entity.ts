@@ -1,9 +1,9 @@
-import { Entity } from 'typeorm';
-import { ColumnaId, ColumnaRef, ColumnaEnum } from '../common/db/columns.js';
+import { Entity, PrimaryColumn } from 'typeorm';
+import { ColumnaRef, ColumnaEnum } from '../common/db/columns.js';
 
 @Entity('dispositivos')
 export class DispositivoEntidad {
-  @ColumnaId()
+  @PrimaryColumn({ type: 'varchar', length: 200 })
   tokenExpo: string;
 
   @ColumnaRef({ nullable: false })
